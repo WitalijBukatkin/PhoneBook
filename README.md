@@ -5,9 +5,9 @@
 ### Implementing personal phonebook for each users
 ### It use REST API for access
 
-## This project deployed in Heroku
-## On link: [PhoneBook](https://phonebookwitalijbukatkin.herokuapp.com/)
-## You may have to wait for the loading
+### This project deployed in Heroku
+### On link: [PhoneBook](https://phonebookwitalijbukatkin.herokuapp.com/)
+#### You may have to wait for the loading
 
 ### Capabilities
 - get list all users
