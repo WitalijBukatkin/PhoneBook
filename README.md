@@ -13,7 +13,9 @@
 - find users by name
 - find contact by phoneNumber
 
-### REST API
+### [Curl example REST API](https://github.com/WitalijBukatkin/PhoneBook/blob/master/curl_rest_tests.md)
+
+### Full REST API
 | URL | HTTP Method | Body | Description |
 | --- | ---- | ----| --- |
 | /rest/users | GET | | Get users list |
@@ -31,8 +33,6 @@
 | /rest/contacts?userId={USER_ID}  | PUT | {"id":1,"userId":0,"firstName":"Contact","secondName":"Test contact","email":"test.contact3@mail.com","phoneNumbers":["12"]} | Update contact for userId |
 | /rest/contacts/{ID}?userId={USER_ID}  | DELETE | | Delete contact for userId |
 | /rest/contacts/by?phoneNumber={PHONE_NUMBER}?userId={USER_ID} | GET |  |Find contact for userId=0 by phone number |
-
-### [Curl example REST API](https://github.com/WitalijBukatkin/PhoneBook/blob/master/curl_rest_tests.md)
 
 ### Uses
 - Spring Boot 2

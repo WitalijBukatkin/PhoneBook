@@ -1,0 +1,119 @@
+<html>
+<body>
+<h2>The test project for DINO Systems</h2>
+<h3>Implementing personal phonebook for each users</h3>
+<h3>It use REST API for access</h3>
+<a href="https://github.com/WitalijBukatkin/PhoneBook">Link to repository</a>
+<h3>Capabilities</h3>
+<ul>
+    <li>get list all users</li>
+    <li>create/delete/get(by id)/update users</li>
+    <li>create/delete/get(by id)/update contact for user</li>
+    <li>get list all contacts for user</li>
+    <li>find users by name</li>
+    <li>find contact by phoneNumber</li>
+</ul>
+<h3><a href="https://github.com/WitalijBukatkin/PhoneBook/blob/master/curl_rest_tests.md">Curl example REST API</a></h3>
+<h3>Full REST API</h3>
+<table border="1">
+    <thead>
+    <tr>
+        <th>URL</th>
+        <th>HTTP Method</th>
+        <th>Body</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>/rest/users</td>
+        <td>GET</td>
+        <td></td>
+        <td>Get users list</td>
+    </tr>
+    <tr>
+        <td>/rest/users/{ID}</td>
+        <td>GET</td>
+        <td></td>
+        <td>Get user by id</td>
+    </tr>
+    <tr>
+        <td>/rest/users</td>
+        <td>POST</td>
+        <td>{&quot;name&quot;:&quot;User1&quot;,&quot;email&quot;:&quot;test.email@mail.com&quot;,&quot;password&quot;:&quot;Password&quot;,&quot;contacts&quot;:[]}</td>
+        <td>Create user</td>
+    </tr>
+    <tr>
+        <td>/rest/users</td>
+        <td>PUT</td>
+        <td>{&quot;id&quot;:100,&quot;name&quot;:&quot;U&quot;,&quot;email&quot;:&quot;test.em&quot;,&quot;password&quot;:&quot;Passwo&quot;,&quot;contacts&quot;:[]}</td>
+        <td>Update user</td>
+    </tr>
+    <tr>
+        <td>/rest/users/{ID}</td>
+        <td>DELETE</td>
+        <td></td>
+        <td>Delete user</td>
+    </tr>
+    <tr>
+        <td>/rest/users/by?name=test</td>
+        <td>GET</td>
+        <td></td>
+        <td>Find user by name</td>
+    </tr>
+    </tbody>
+</table>
+<table border="1">
+    <thead>
+    <tr>
+        <th>URL</th>
+        <th>HTTP Method</th>
+        <th>Body</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>/rest/contacts?userId={USER_ID}</td>
+        <td>GET</td>
+        <td></td>
+        <td>Get contacts list for userId</td>
+    </tr>
+    <tr>
+        <td>/rest/contacts/{ID}?userId={USER_ID}</td>
+        <td>GET</td>
+        <td></td>
+        <td>Get contact for userId by id</td>
+    </tr>
+    <tr>
+        <td>/rest/contacts?userId={USER_ID}</td>
+        <td>POST</td>
+        <td>{&quot;userId&quot;:0,&quot;firstName&quot;:&quot;Contact New&quot;,&quot;secondName&quot;:&quot;Test
+            contact&quot;,&quot;email&quot;:&quot;test.contact3@mail.com&quot;,&quot;phoneNumbers&quot;:[&quot;12&quot;,&quot;13&quot;]}
+        </td>
+        <td>Create contact for userId</td>
+    </tr>
+    <tr>
+        <td>/rest/contacts?userId={USER_ID}</td>
+        <td>PUT</td>
+        <td>{&quot;id&quot;:1,&quot;userId&quot;:0,&quot;firstName&quot;:&quot;Contact&quot;,&quot;secondName&quot;:&quot;Test
+            contact&quot;,&quot;email&quot;:&quot;test.contact3@mail.com&quot;,&quot;phoneNumbers&quot;:[&quot;12&quot;]}
+        </td>
+        <td>Update contact for userId</td>
+    </tr>
+    <tr>
+        <td>/rest/contacts/{ID}?userId={USER_ID}</td>
+        <td>DELETE</td>
+        <td></td>
+        <td>Delete contact for userId</td>
+    </tr>
+    <tr>
+        <td>/rest/contacts/by?phoneNumber={PHONE_NUMBER}?userId={USER_ID}</td>
+        <td>GET</td>
+        <td></td>
+        <td>Find contact for userId=0 by phone number</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
