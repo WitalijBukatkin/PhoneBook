@@ -16,15 +16,16 @@ public class TestData {
     public static Contact CONTACT_2;
 
     static {
-        init();
-    }
-
-    public static void init() {
         USER_0 = new User(0, "Test user", "test.email@mail.com", "Password");
         CONTACT_1 = new Contact(1, USER_0.getId(), "Contact 1", "Test", "test.contact1@mail.com");
         CONTACT_2 = new Contact(1, USER_0.getId(), "Contact 2", "Test", "test.contact2@mail.com");
 
         CONTACT_1.setPhoneNumbers(Arrays.asList("12", "13"));
         CONTACT_2.setPhoneNumbers(Arrays.asList("14", "15"));
+    }
+
+    public static void init() {
+        CONTACT_1.setUserId(USER_0.getId());
+        CONTACT_2.setUserId(USER_0.getId());
     }
 }

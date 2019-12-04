@@ -5,10 +5,8 @@
 
 package com.github.witalijbukatkin.PhoneBook.repository.inmemory;
 
-import com.github.witalijbukatkin.PhoneBook.TestData;
 import com.github.witalijbukatkin.PhoneBook.model.User;
 import com.github.witalijbukatkin.PhoneBook.repository.UserRepository;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,11 +22,6 @@ class UserRepositoryTest {
 
     @Autowired
     private UserRepository repository;
-
-    @BeforeAll
-    static void before() {
-        TestData.init();
-    }
 
     @Test
     void create() {

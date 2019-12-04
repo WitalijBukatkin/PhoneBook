@@ -33,7 +33,7 @@ class ContactRepositoryTest {
     @Test
     void create() {
         Contact expected = repository.save(
-                new Contact(0L, "Name", "SecondName", "Email"),
+                new Contact(USER_0.getId(), "Name", "SecondName", "Email"),
                 USER_0.getId());
         assertNotNull(expected);
 

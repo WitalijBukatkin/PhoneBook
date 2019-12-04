@@ -7,6 +7,8 @@ package com.github.witalijbukatkin.PhoneBook.repository.inmemory;
 
 import com.github.witalijbukatkin.PhoneBook.model.Contact;
 import com.github.witalijbukatkin.PhoneBook.repository.ContactRepository;
+import com.github.witalijbukatkin.PhoneBook.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
@@ -27,6 +29,9 @@ public class InMemoryContactRepositoryImpl implements ContactRepository {
 
     private final Map<Long, Contact> contacts = new ConcurrentHashMap<>();
 
+    @Autowired
+    private UserRepository userRepository;
+
     public InMemoryContactRepositoryImpl() {
         contacts.put(1L, CONTACT_1);
         contacts.put(2L, CONTACT_2);
@@ -37,6 +42,10 @@ public class InMemoryContactRepositoryImpl implements ContactRepository {
         Objects.requireNonNull(contact, "Contact is not be null");
 
         if (userId != contact.getUserId()) {
+            return null;
+        }
+
+        if (userRepository.get(userId) == null) {
             return null;
         }
 
