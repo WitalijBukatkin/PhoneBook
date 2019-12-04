@@ -3,9 +3,12 @@
  * Github profile: https://github.com/witalijbukatkin
  */
 
-package com.github.witalijbukatkin.PhoneBook.repository;
+package com.github.witalijbukatkin.PhoneBook.repository.inmemory;
 
+import com.github.witalijbukatkin.PhoneBook.TestData;
 import com.github.witalijbukatkin.PhoneBook.model.Contact;
+import com.github.witalijbukatkin.PhoneBook.repository.ContactRepository;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,6 +24,11 @@ class ContactRepositoryTest {
 
     @Autowired
     private ContactRepository repository;
+
+    @BeforeAll
+    static void before() {
+        TestData.init();
+    }
 
     @Test
     void create() {
