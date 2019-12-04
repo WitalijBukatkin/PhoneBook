@@ -1,6 +1,9 @@
-### The test project for DINO Systems
-#### Implementing personal phonebook for each users
-#### It use REST API for access
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a21ba405634c43c78f9aeabc165b0927)](https://www.codacy.com/manual/WitalijBukatkin/PhoneBook?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=WitalijBukatkin/PhoneBook&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.org/WitalijBukatkin/PhoneBook.svg?branch=master)](https://travis-ci.org/WitalijBukatkin/PhoneBook)
+
+## The test project for DINO Systems
+### Implementing personal phonebook for each users
+### It use REST API for access
 
 ### Capabilities
 - get list all users
@@ -29,7 +32,7 @@
 | /rest/contacts/{ID}?userId={USER_ID}  | DELETE | | Delete contact for userId |
 | /rest/contacts/by?phoneNumber={PHONE_NUMBER}?userId={USER_ID} | GET |  |Find contact for userId=0 by phone number |
 
-### Curl example REST API located in curl_rest_tests.md file on root directory
+### [Curl example REST API](https://github.com/WitalijBukatkin/PhoneBook/blob/master/curl_rest_tests.md)
 
 ### Uses
 - Spring Boot 2
