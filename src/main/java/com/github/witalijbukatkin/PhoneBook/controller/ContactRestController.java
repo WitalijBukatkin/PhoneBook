@@ -22,25 +22,25 @@ import java.util.List;
 @RestController
 @RequestMapping(value = ContactRestController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 public class ContactRestController {
-    public static final String REST_URL = "/rest/contact";
+    public static final String REST_URL = "/rest/contacts";
     private final Logger log = LoggerFactory.getLogger(getClass());
     @Autowired
     private ContactRepository repository;
 
     @GetMapping
-    public List<Contact> getAll(@RequestParam int userId) {
+    public List<Contact> getAll(@RequestParam long userId) {
         log.info("getAll for userId {}", userId);
         return repository.getAll(userId);
     }
 
     @GetMapping("/{id}")
-    public Contact get(@PathVariable int id, @RequestParam int userId) {
+    public Contact get(@PathVariable long id, @RequestParam long userId) {
         log.info("get {} for userId {}", id, userId);
         return repository.get(id, userId);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Contact> create(@RequestBody Contact contact, @RequestParam int userId) {
+    public ResponseEntity<Contact> create(@RequestBody Contact contact, @RequestParam long userId) {
         log.info("create {} for userId {}", contact, userId);
 
         Contact created = repository.save(contact, userId);
@@ -58,7 +58,7 @@ public class ContactRestController {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable int id, @RequestParam int userId) {
+    public void delete(@PathVariable long id, @RequestParam long userId) {
         log.info("delete {} for userId {}", id, userId);
 
         if (!repository.delete(id, userId)) {
@@ -68,7 +68,7 @@ public class ContactRestController {
 
     @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void update(@RequestBody Contact contact, @RequestParam int userId) {
+    public void update(@RequestBody Contact contact, @RequestParam long userId) {
         log.info("update {} for userId {}", contact, userId);
 
         if (repository.save(contact, userId) == null) {
@@ -77,7 +77,7 @@ public class ContactRestController {
     }
 
     @GetMapping("/by")
-    public Contact getByPhoneNumber(@RequestParam String phoneNumber, @RequestParam int userId) {
+    public Contact getByPhoneNumber(@RequestParam String phoneNumber, @RequestParam long userId) {
         log.info("getByName {} for userId {}", phoneNumber, userId);
         return repository.getByPhoneNumber(phoneNumber, userId);
     }

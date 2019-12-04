@@ -5,6 +5,8 @@
 
 package com.github.witalijbukatkin.PhoneBook.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -94,6 +96,7 @@ public class Contact {
         this.phoneNumbers = phoneNumbers;
     }
 
+    @JsonIgnore
     public boolean isNew() {
         return id == null;
     }

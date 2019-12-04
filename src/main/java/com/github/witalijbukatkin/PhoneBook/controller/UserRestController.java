@@ -35,7 +35,7 @@ public class UserRestController {
     }
 
     @GetMapping("/{id}")
-    public User get(@PathVariable int id) {
+    public User get(@PathVariable long id) {
         log.info("get {}", id);
         return repository.get(id);
     }
@@ -59,7 +59,7 @@ public class UserRestController {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable int id) {
+    public void delete(@PathVariable long id) {
         log.info("delete {}", id);
 
         if (!repository.delete(id)) {

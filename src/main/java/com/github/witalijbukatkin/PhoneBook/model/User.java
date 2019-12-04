@@ -5,6 +5,8 @@
 
 package com.github.witalijbukatkin.PhoneBook.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -67,6 +69,7 @@ public class User {
         this.email = email;
     }
 
+    @JsonIgnore
     public String getPassword() {
         return password;
     }
@@ -83,6 +86,7 @@ public class User {
         this.contacts = contacts;
     }
 
+    @JsonIgnore
     public boolean isNew() {
         return id == null;
     }
